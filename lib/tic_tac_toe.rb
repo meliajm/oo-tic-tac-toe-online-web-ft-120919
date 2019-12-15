@@ -43,8 +43,6 @@ class TicTacToe
     !position_taken?(board_index) && board_index < 9 && board_index <= 0 ? true : false
   end 
   
-  
-  
   def turn_count
     count = 0
     @board.each { |b| 
@@ -57,30 +55,55 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end 
   
+  def won?
+    @board 
+  end 
+  
   def turn
     puts "What's your move, 1-9?"
-    user_input = gets 
+    user_input = gets.strip
+    
     player_index = input_to_index(user_input)
     x_o = current_player
     if valid_move?(player_index)
-      move(player_index, x_o="X")
-      display_board 
-    else 
-      puts "invalid"
-      puts "What's your move, 1-9?"
-      binding.pry
-      user_input = gets 
-      
-      player_index = input_to_index(user_input)
-      
-    end
+      move(player_index, x_o)
+      display_board
+    else
+      # puts "invalid"
+      turn
+    end 
+  end
+  
+  
+  
+  def full?
+    turn_count == 9 ? true : false
+  end 
+  
+  def draw?
     
-    
+  end 
+  
+  def over?
+    won? || 
   end
   
   def winner
   end 
   
+  
   def play 
   end 
-end 
+  
+  
+end
+
+
+# if valid_move?(player_index)
+    #   move(player_index, x_o="X")
+    #   display_board 
+    # else 
+    #   puts "invalid"
+    #   puts "What's your move, 1-9?"
+    #   user_input = gets 
+    # user_input = 0
