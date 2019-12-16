@@ -114,8 +114,9 @@ class TicTacToe
   
   
   def play 
+    binding.pry
     until over?
-      binding.pry
+      
       turn 
       if won?
         winner
