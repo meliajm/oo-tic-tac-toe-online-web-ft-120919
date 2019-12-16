@@ -117,11 +117,12 @@ class TicTacToe
     
     until over?
       turn 
+      draw?
     end 
     
     if won?
       winner
-    elsif draw?
+    else
       puts "Cat's Game!"
     end
   
