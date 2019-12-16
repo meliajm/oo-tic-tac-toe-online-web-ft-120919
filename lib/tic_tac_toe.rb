@@ -114,7 +114,7 @@ class TicTacToe
   
   
   def play 
-    binding.pry
+    
     until over?
       
       turn 
