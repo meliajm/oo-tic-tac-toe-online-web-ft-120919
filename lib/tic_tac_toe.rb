@@ -124,7 +124,7 @@ class TicTacToe
     
     if won?
       winner
-      puts "Congratulations #{@board[won?[0]]}"
+      # puts "Congratulations #{@board[won?[0]]}"
     else
       puts "Cat's Game!"
     end
