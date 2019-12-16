@@ -101,7 +101,7 @@ class TicTacToe
   end 
   
   def over?
-    won? || full? ? true : false
+    won? || full? || draw? ? true : false
   end
   
   def winner
@@ -115,11 +115,24 @@ class TicTacToe
   
   def play 
     
+    until over?
+      turn 
+      
+    end 
+    
+    if won?
+      # winner
+      # binding.pry
+      puts "Congratulations #{winner}!"
+    else
+      puts "Cat's Game!"
+    end
+  
   end 
   
 end  
 
-
+# binding.pry
 
 # if valid_move?(player_index)
     #   move(player_index, x_o="X")
