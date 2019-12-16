@@ -128,7 +128,7 @@ class TicTacToe
   
 end  
 
-
+binding.pry
 
 # if valid_move?(player_index)
     #   move(player_index, x_o="X")
