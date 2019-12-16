@@ -114,7 +114,14 @@ class TicTacToe
   
   
   def play 
-    
+    until over?
+      turn 
+      if won?
+        winner
+      else
+        puts "Cats game"
+      end
+    end
   end 
   
 end  
