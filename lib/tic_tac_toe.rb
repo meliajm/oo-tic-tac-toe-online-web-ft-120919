@@ -117,14 +117,14 @@ class TicTacToe
     
     until over?
       turn 
-    
+    end 
     
     if won?
       winner
     else
       puts "Cat's Game!"
     end
-  end
+  
   end 
   
 end  
