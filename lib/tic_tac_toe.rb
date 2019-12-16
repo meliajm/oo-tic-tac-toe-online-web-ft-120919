@@ -117,9 +117,7 @@ class TicTacToe
     
     until over?
       turn 
-      if draw?
-        puts "Cat's Game!"
-      end
+      
     end 
     
     if won?
