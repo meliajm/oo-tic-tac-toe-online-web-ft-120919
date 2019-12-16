@@ -122,6 +122,7 @@ class TicTacToe
     
     if won?
       winner
+      binding.pry
       # puts "Congratulations #{@board[won?[0]]}"
     else
       puts "Cat's Game!"
