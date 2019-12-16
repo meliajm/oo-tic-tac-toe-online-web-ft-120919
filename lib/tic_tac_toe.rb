@@ -1,4 +1,5 @@
 require 'pry'
+
 class TicTacToe
   
   WIN_COMBINATIONS = [
@@ -26,21 +27,21 @@ class TicTacToe
   
   
   def input_to_index(user_input)
-    user_input = user_input.to_i
-    user_input-1
+    input = user_input.to_i - 1
+    input
   end
   
   def move(index, x_o="X")
     @board[index] = x_o 
-    @board
+    
   end 
   
   def position_taken?(board_index)
-    @board[board_index] == " "? false : true
+    @board[board_index] == " " ? false : true
   end
   
   def valid_move?(board_index)
-    !position_taken?(board_index) && board_index < 9 && board_index <= 0 ? true : false
+    !position_taken?(board_index) && board_index < 9 && board_index >= 0 ? true : false
   end 
   
   def turn_count
@@ -55,25 +56,40 @@ class TicTacToe
     turn_count % 2 == 0 ? "X" : "O"
   end 
   
-  def won?
-    @board 
-  end 
   
   def turn
-    puts "What's your move, 1-9?"
+    puts "Please enter a number (1-9):"
     user_input = gets.strip
     
     player_index = input_to_index(user_input)
-    x_o = current_player
+    
     if valid_move?(player_index)
+      # binding.pry
+      x_o = current_player
       move(player_index, x_o)
-      display_board
+      
     else
-      # puts "invalid"
+      # "invalid"
+      
       turn
+      
     end 
+    display_board
+    
   end
   
+  
+  def won?
+    result = false
+    i = 0 
+    while i < WIN_COMBINATIONS.length do 
+      if @board[WIN_COMBINATIONS[i][0]] == @board[WIN_COMBINATIONS[i][1]] && @board[WIN_COMBINATIONS[i][1]] == @board[WIN_COMBINATIONS[i][2]] && @board[WIN_COMBINATIONS[i][0]] != " " 
+        result = WIN_COMBINATIONS[i]
+      end
+    i += 1
+    end
+    result 
+  end 
   
   
   def full?
@@ -81,22 +97,28 @@ class TicTacToe
   end 
   
   def draw?
-    
+    full? && !won? ? true : false
   end 
   
   def over?
-    won? || 
+    won? || full? ? true : false
   end
   
   def winner
+    if won?
+      @board[won?[0]]
+    else
+      nil
+    end
   end 
   
   
   def play 
+    
   end 
   
-  
-end
+end  
+
 
 
 # if valid_move?(player_index)
