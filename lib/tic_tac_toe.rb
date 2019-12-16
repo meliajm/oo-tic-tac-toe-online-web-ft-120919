@@ -113,16 +113,16 @@ class TicTacToe
   end 
   
   
-  # def play 
-  #   until over?
-  #     turn 
-  #     if won?
-  #       winner
-  #     else
-  #       puts "Cat's Game!"
-  #     end
-  #   end
-  # end 
+  def play 
+    until over?
+      turn 
+      if won?
+        winner
+      else
+        puts "Cat's Game!"
+      end
+    end
+  end 
   
 end  
 
