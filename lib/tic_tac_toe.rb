@@ -115,15 +115,15 @@ class TicTacToe
   
   def play 
     
-    # until over?
-    #   turn 
-    # end 
+    until over?
+      turn 
+    end 
     
-    # if won?
-    #   winner
-    # else
-    #   puts "Cat's Game!"
-    # end
+    if won?
+      winner
+    else
+      puts "Cat's Game!"
+    end
   
   end 
   
