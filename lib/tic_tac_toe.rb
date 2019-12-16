@@ -119,7 +119,7 @@ class TicTacToe
       if won?
         winner
       else
-        puts "Cats game"
+        puts "Cat's Game!"
       end
     end
   end 
